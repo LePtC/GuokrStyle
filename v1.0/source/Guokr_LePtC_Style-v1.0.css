@@ -1,6 +1,6 @@
 ﻿@-moz-document domain("guokr.com") {
 
-/* Guokr.com LePtC Style，版本v1.0，作者 http://www.guokr.com/blog/506574/ */
+/* Guokr.com LePtC Style，版本v1.0 beta，作者 http://www.guokr.com/blog/506574/ */
 /* 以下功能不想要的，注释掉或直接删除跟在说明后面的代码即可，删改的时候注意逗号 */
 
 
@@ -11,8 +11,8 @@
 /* 改页面背景色B9C4DD */
 body:not([id="tinymce"]),
 .sub-nav-link a,
-.gmain, .gside, .gh-wrap, .gwrap-m, .gui-block-hd, .gui-block-bd,
-.user-asks,.titles li 
+.gmain, .gside, .gwrap-m, .gui-block-hd, .gui-block-bd,
+.user-asks, .titles li 
 {background: #222 !important;}
 
 .gh-notice-panel, .gh-remind-panel, .gh-panel-bottom, .gh-list,
@@ -54,10 +54,11 @@ body, input {text-shadow: none !important;}*/
 *:visited {color: #CC88CC !important;}
 /* 重新提升一些元素的优先级 */
 .unread a {color: #0078B6 !important;}
-    
+
+/* LePtC 分割线 */
 [src="http://img1.guokr.com/image/DfTVoYRY-O8XDqhRTdSKZvICsX7BdU_CgwlrID0EWeWQAQAACgAAAFBO.png"] {width: 100% !important; height: 8px !important;}
 
-    
+/* $(".strong:contains('##')") {font-size: 20px !important;} */
 
 /* =====果壳问答投票渲染===== */
 
@@ -189,12 +190,12 @@ h2, #blockTitle, [id="articleTitle"] {
 /* =====以下是各种屏蔽===== */
 
 
-/* 强力防误删 */
+/* 强制防误删，默认不开启 
 [data-operation="deleteAnswer"],
 [data-operation="deleteComment"],
 [id="deleteBlog"],
 [data-operation="delete"]
-{display: none !important;}
+{display: none !important;} */
 
 /* 反正我从来不分享 
 *.bdsharebuttonbox.bdshare-button-style0-16,*/
@@ -202,7 +203,7 @@ h2, #blockTitle, [id="articleTitle"] {
 /* 我不用看热门标签 */
 .ask-index-list.ask-hot-tags.gclear,
 /* 我不用看问答帮助 */
-DIV.ask-index-list.ask-index-help.gclear,
+.ask-index-list.ask-index-help.gclear,
 /* 隐藏你可能感兴趣的小组 */
 .group-mine-page .group-recom,
 /* 屏蔽换来换去的推广，跟广告似的 */
@@ -229,31 +230,22 @@ DIV.ask-index-list.ask-index-help.gclear,
 
 
 
-/* =====以下均为方便小屏幕放大的处理===== */
-
-
-/* 这一句话修复了好多东西，不要动... */
+/* 小屏幕下页面放大调整，默认不开启 
 body {min-width: 650px !important;}
-/* 顺手把底栏也卡到小屏幕版吧 */
-.gbottom {width: 720px !important;}
+.gbottom {width: 720px !important;}*/
 
-/* 隐藏没用的搜索框 */
+/* 隐藏搜索框，把位置给通知栏 
 .gh-search {display: none !important;}
-/* 把位置给通知栏 */
-.gh-wrap {width: 720px !important;}
+.gh-wrap {width: 720px !important;} */
 
-/* 隐藏果壳图标省空间 */
-.sub-nav-wrap h2 a {display: none !important;}
-/* 把空间给右侧按钮 */
-/* 开发中... */
+/* 隐藏果壳图标
+.sub-nav-wrap h2 a {display: none !important;} */
+
 
 /* 果壳问答首页完整显示预览
 .gellipsis { white-space:normal !important;}*/
 
-/* 改成隐藏水平滚动条 */
-scrollbar[orient="horizontal"] {display: none !important;}
 
-#ufoBtn.ufo-btn{display: none !important;}
 
 }
 
