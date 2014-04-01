@@ -5,39 +5,57 @@
 
 
 
-/* =====改整体的颜色风格===== */
+/* ===== 改主题颜色，默认为浅色主题 ===== */
 
 
-/* 改页面背景色B9C4DD */
+/* 页面背景色，默认豆沙绿 */
 body:not([id="tinymce"]),
 .sub-nav-link a,
-.gmain, .gside, .gwrap-m, .gui-block-hd, .gui-block-bd,
-.user-asks, .titles li 
+.gmain, .gside, .gwrap-m, 
+.gui-block-hd, .gui-block-bd, .gui-block-tab,
+.user-asks,.titles li 
+/* 深色主题把下面改成 #222 即可 */
 {background: #222 !important;}
 
 .gh-notice-panel, .gh-remind-panel, .gh-panel-bottom, .gh-list,
-.name_card, .card-focus
-{background: rgba(34,34,34,0.9) !important;}
+.gui-menu > * , .name_card, .card-focus
+/* 深色主题把下面改成 rgba(34,34,34,0.8) */
+{background: rgba(34,34,34,0.8) !important;}
 
 .gui-block, .answer_list-num, .invite, .gkr-rank-info,
 .ask-success-tip,.gbottom, /*,.sub-nav-link a:not(active)*/
-.rela-read,
-.gfr,
-.ask-answer-nums, .ask-box-current, .current a, .gtabs-curr,
+.rela-read, .editors-note, .recommend-article-next, 
+.items-sticky, .item-sticky, .form-wp,
+.ask-answer-nums, .ask-box-current, .gtabs-curr,
 .linenodiv, .highlight, .hll
-{background: rgba(255,255,255,0.1) !important;}
+/* 深色主题把下面改成 rgba(255,255,255,0.2) */
+{background: rgba(255,255,255,0.2) !important;}
 
-/* 暗色调背景得配白色正文 */
+/* 深色主题还需开启下面这段，把文字颜色变为浅色 */
 h1,li, 
 .answer-txt,.post-detail,.cmt-content,.document,
 .card-footmark, .card-desp, .card-focus-num span, .motto span
-{color: #DDD !important;}
+{color: #DDD !important;} 
     
-/* 改编辑器背景色 */
-.gbtxt, .gstxt, .gttxt {color: #000 !important;} 
-.view, .gbtxt, .gstxt, .gttxt {background: rgb(150, 225, 142) !important;} 
+
+/* 无论深浅色主题，编辑器均用深绿 */
+.view, .gbtxt, .gstxt, .gttxt
+{background: #95CC89 !important;} 
 .view body {background: none !important;} 
-.view body p {background: none !important; width: 560px !important;}
+.view body p {background: none !important; width: 600px !important;}
+/* 新版编辑器有层次感... */
+[id="tinymce"], .mce-panel, [id="mce_11-body"], .mce-textbox,
+.edui-editor-toolbarboxinner
+{background: #C7EDCC !important;}
+[id="tinymce"] > *
+{background: #95CC89 !important;}
+/* 文字颜色实黑 */
+.gbtxt, .gstxt, .gttxt {color: #000 !important;} 
+
+
+
+
+/* 第二导航栏 */
 
 .sub-nav {height: 34px !important;}
 .sub-nav-wrap {
@@ -45,20 +63,23 @@ h1,li,
     line-height: 29px !important;
     padding: 0px 15px;
 }
+
     
-    
-/*Firefox Strong Font Rendering (Like Safari)
-body, input {text-shadow: none !important;}*/
+
 
 /* 已读变色功能，尽量调低优先级 */
 *:visited {color: #CC88CC !important;}
-/* 重新提升一些元素的优先级 */
+/* 重新提升通知页面的优先级 */
 .unread a {color: #0078B6 !important;}
+
+
+
 
 /* LePtC 分割线 */
 [src="http://img1.guokr.com/image/DfTVoYRY-O8XDqhRTdSKZvICsX7BdU_CgwlrID0EWeWQAQAACgAAAFBO.png"] {width: 100% !important; height: 8px !important;}
 
-/* $(".strong:contains('##')") {font-size: 20px !important;} */
+
+
 
 /* =====果壳问答投票渲染===== */
 
@@ -66,11 +87,11 @@ body, input {text-shadow: none !important;}*/
 /* 问答的标题加大涂深绿 */
 h3 {
     font-size: 14px !important;
-    color: rgb(75, 167, 51) !important;
+    color: #4BA733 !important;
 }
 h2, #blockTitle, [id="articleTitle"] {
     font-size: 20px !important; 
-    color: rgb(75, 167, 51) !important;
+    color: #4BA733 !important;
 }
 
 /* 问答的标签描蓝边 */
@@ -88,16 +109,16 @@ h2, #blockTitle, [id="articleTitle"] {
 [class="answer-digg-dw"],
 [class="answer-digg-dw highlight"] {
     font-size: 16px !important;
-    border: 2px solid rgb(75, 167, 51) !important;
-    /* 想要直角的话注释下面两行即可 
-    border-radius: 5px !important;*/
+    border: 2px solid #4BA733 !important;
+    /* 想要直角的话注释下面这行即可 */
+    border-radius: 5px !important;
 }
 
 /* 支持涂绿 */
 *.ask-multi-up,
 *.ask-side-up,
 [class="answer-digg-up"] {
-    color: rgb(75, 167, 51) !important;
+    color: #4BA733 !important;
 }
 /* 已投票的话反浅绿色提醒 */
 [class="answer-digg-up highlight"] {
@@ -117,11 +138,11 @@ h2, #blockTitle, [id="articleTitle"] {
 /* 回答楼层条涂绿 */
 .answer-t {
     background: rgb(150, 225, 142) !important;
-    border: 2px solid rgb(75, 167, 51) !important;
+    border: 2px solid #4BA733 !important;
 }
 /* 调整灰色文字颜色 */
 .answer-usr, .answer-date {
-    color: rgb(75, 167, 51) !important;
+    color: #4BA733 !important;
     font-size: 14px !important;
 }
 /* 回答者的名字加大 */
@@ -131,9 +152,9 @@ h2, #blockTitle, [id="articleTitle"] {
 
 /* 感谢等按钮也描个边吧~ */
 [data-operation="thankAnswer"] {
-    color: rgb(75, 167, 51) !important;
+    color: #4BA733 !important;
     background: rgb(220, 220, 220) !important;
-    border: 2px solid rgb(75, 167, 51) !important;
+    border: 2px solid #4BA733 !important;
 }
 [data-operation="helplessAnswer"] {border: 2px solid rgb(150, 150, 150) !important;}
 [data-report="yes"] {border: 2px solid rgb(255, 0, 0) !important;}
@@ -145,7 +166,7 @@ h2, #blockTitle, [id="articleTitle"] {
     /*border-radius: 5px !important;*/
 }
 
-/* 本狸的回答名字高亮加粗 >_< */
+/* 本狸的名字高亮加粗 >_< */
 [href="http://www.guokr.com/i/1585771774/"] {
     color: rgb(243, 117, 38) !important;
     font-weight: bold !important;
@@ -171,40 +192,19 @@ h2, #blockTitle, [id="articleTitle"] {
 [href="http://www.guokr.com/i/1834626891/"]
 {color: rgb(243, 117, 38) !important;}
 
-/* 把灰蒙蒙的正文颜色变成实黑 */
-/* （果壳首页的） 
-.index-page .main .recos .recos-article .stress a, 
-.index-page .main .contents .contents-l .content a,
-.index-page .main .contents .contents-r .content a,
-/* （果壳问答的） 
-* .gellipsis,
-/* （个人主页的） 
-.index-page .info,.tasket-lt-item,
-.blog_list li p, .answer_list li p, .news_list li p
-{color: rgb(0, 0, 0) !important;}*/
-
-
 
 
 
 /* =====以下是各种屏蔽===== */
 
 
-/* 强制防误删，默认不开启 
-[data-operation="deleteAnswer"],
-[data-operation="deleteComment"],
-[id="deleteBlog"],
-[data-operation="delete"]
-{display: none !important;} */
-
-/* 反正我从来不分享 
-*.bdsharebuttonbox.bdshare-button-style0-16,*/
+/* 反正我从来不分享 */
 .shareAnswer.ghide.bdsharebuttonbox.bdshare-button-style0-16,
 /* 我不用看热门标签 */
 .ask-index-list.ask-hot-tags.gclear,
 /* 我不用看问答帮助 */
 .ask-index-list.ask-index-help.gclear,
-/* 隐藏你可能感兴趣的小组 */
+/* 隐藏可能感兴趣的小组 */
 .group-mine-page .group-recom,
 /* 屏蔽换来换去的推广，跟广告似的 */
 .side-promote
@@ -229,21 +229,28 @@ h2, #blockTitle, [id="articleTitle"] {
 
 
 
+/* =====可选功能===== */
 
-/* 小屏幕下页面放大调整，默认不开启 
-body {min-width: 650px !important;}
-.gbottom {width: 720px !important;}*/
 
-/* 隐藏搜索框，把位置给通知栏 
-.gh-search {display: none !important;}
-.gh-wrap {width: 720px !important;} */
+/* 强制防误删，默认不开启 
+[data-operation="deleteAnswer"],
+[data-operation="deleteComment"],
+[id="deleteBlog"],
+[data-operation="delete"]
+{display: none !important;} */
 
 /* 隐藏果壳图标
 .sub-nav-wrap h2 a {display: none !important;} */
 
+/* 小屏幕下右侧物体向左贴紧 */
+.gh-notice.gfr, .sub-nav-btn.gfr
+{float: none !important;}
+/* 必要时隐藏搜索框把位置给通知栏，默认不开启 
+.gh-wrap .gh-search {display: none !important;}*/
 
-/* 果壳问答首页完整显示预览
-.gellipsis { white-space:normal !important;}*/
+
+/* 可选功能：首页显示完整显示预览 
+.gellipsis { white-space: normal !important;}*/
 
 
 
